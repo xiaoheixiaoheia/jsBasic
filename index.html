@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 手写冒泡排序
+    var arr = [8, 7, 6, 5, 4, 1];
+    // 轮数
+    for (var i = 0; i < arr.length - 1; i++) {
+        // 次数
+        for (j = 0; j < arr.length - 1 - i; j++) {
+            // 判断前一个值大于后一个值
+            if (arr[j] > arr[j + 1]) {
+                var temp = arr[j + 1];
+                arr[j + 1] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    console.log(arr)
+
+    // 冒泡排序原理
+    // var arr = [8, 7, 6, 5, 4, 1];
+    // 轮数
+    // 第一轮 7, 6, 5, 4, 1, 8   次数   5
+    // 第二轮 6, 5, 4, 1, 7, 8          4    
+    // 第三轮 5, 4, 1, 6, 7, 8          3
+    // 第四轮 4, 1, 5, 6, 7, 8          2
+    // 第五轮 1, 4, 5, 6, 7, 8          1
+    // 编程实现indexOf方法
+    var str = [1, 2, 3, 4, 5, 6, 4, 3];
+
+    function indexFun(str, val) {
+        for (var i = 0; i < str.length; i++) {
+            if (str[i] == val) {
+                return i;
+            }
+        }
+        return -1
+    }
+    console.log(indexFun(str, 13))
+
+    // 编程实现首字母大写
+    var zimu = "aAA212121";
+    console.log(titleCase(zimu));
+
+    function titleCase(str) {
+        var a = str.toLowerCase().split(' ');
+        var b = a.map(function(val) {
+            return val.replace(val.charAt(0), val.charAt(0).toUpperCase())
+        })
+        return b.join(' ');
+    }
+
+
+    // 求二维数组所有数的和(封装函数)
+    var arrList = [
+        [1, 2],
+        [3, 4]
+    ];
+    console.log(arrList.length);
+    console.log(sum(arrList));
+
+    function sum(arr) {
+        var total = 0;　　
+        for (var i = 0; i < arr.length; i++) {　　　　
+            for (var j = 0; j < arr[i].length; j++) {　　　　
+                console.log("值为", arr[i][j])　　
+                total += arr[i][j]　　　　
+            }　　
+        }　
+        return total;　
+    }
+
+    // 数组求和
+    function sum1(arr) {
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        return sum;
+    }
+    console.log('111', sum1([1, 2, 3, 4]))
+
+    function sum1(arr) {
+        return eval(arr.join("+"));
+    }
+
+    console.log(remove([1, 2, 3, 4, 5, 2], 2))
+        // 移除数组arr中的所有与item相等的值：下边方法修改了原数组
+    function remove(arr, item) {
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] == item) {
+                arr.splice(i, 1);
+            }
+        }
+        return arr;
+    }
+    // 移除数组 arr 中的所有值与 item 相等的元素。不要直接修改数组 arr，结果返回新的数组
+    function remove(arr, item) {
+        var a = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] != item) {
+                a.push(arr[i]);
+            }
+        }
+        return a;
+    }
+    console.log(append([1, 2, 3, 4], 5))
+
+    // function append(arr, item) {
+    //     return arr.concat([item])
+    // }
+
+    // 在数组 arr 末尾添加元素 item。不要直接修改数组 arr，结果返回新的数组
+    function append(arr, item) {
+        return arr.concat([item])
+    }
+
+    console.log(truncate([1, 2, 3, 4]))
+        // 删除数组 arr 最后一个元素。 不要直接修改数组 arr， 结果返回新的数组
+
+    function truncate(arr) {
+        var array = arr.concat();
+        array.pop();
+        console.log("+++++", arr)
+        return array;
+
+    }
+
+    // 在数组 arr 开头添加元素 item。不要直接修改数组 arr，结果返回新的数组
+    function prepend(arr, item) {
+        var array = arr.concat();
+        array.unshift(item);
+        return array;
+    }
+</script>
+
+</html>

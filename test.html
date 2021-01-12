@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>销售模式</title>
+</head>
+
+<body>
+    <div>
+        <select onchange="changeName()">
+            <option>销售人员</option>
+            <option value=""></option>
+        </select>
+        <select onchange="changePro()">
+            <option>产品</option>
+            <option value=""></option>
+        </select>
+
+        <select onchange="changeArea()">
+            <option>区域</option>
+            <option value=""></option>
+        </select>
+        <select onchange="changeZd()">
+            <option>终端</option>
+            <option value=""></option>
+        </select>
+    </div>
+</body>
+<script type="text/javascript" src="./test.json">
+</script>
+<script>
+    var json = {
+        list: [{
+            name: "张三",
+            product: "水",
+            area: "三里屯"
+        }, {
+            name: "张三1",
+            product: "水1",
+            area: "三里屯1"
+        }, {
+            name: "张三2",
+            product: "水2",
+            area: "三里屯2"
+        }, {
+            name: "张三3",
+            product: "水3",
+            area: "三里屯3"
+        }, {
+            name: "张三4",
+            product: "水4",
+            area: "三里屯4"
+        }, {
+            name: "张三5",
+            product: "水5",
+            area: "三里屯5"
+        }, {
+            name: "张三6",
+            product: "水6",
+            area: "三里屯6"
+        }, {
+            name: "张三7",
+            product: "水7",
+            area: "三里屯7"
+        }, {
+            name: "张三8",
+            product: "水8",
+            area: "三里8"
+        }, {
+            name: "张三9",
+            product: "水9",
+            area: "三里屯9"
+        }, {
+            name: "张三10",
+            product: "水10",
+            area: "三里屯10"
+        }, ]
+    }
+    var obj = eval(json);
+
+    function changeName() { 
+        var i; 
+        for (i = 0; i < obj.list.length; i++) { 
+            document.form1.sel.options[i] = new Option(obj.list[i], i); 
+        }
+    }
+</script>
+
+</html>
